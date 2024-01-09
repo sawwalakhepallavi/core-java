@@ -23,6 +23,7 @@ public class WBDriver {
             String bn =scanner.next();
             writer.toPrint(new Book(p,bn));
         }else{
+            System.out.println("age is "+ag+" Name of author "+n);
             System.out.println("Thank you !");
         }
 
