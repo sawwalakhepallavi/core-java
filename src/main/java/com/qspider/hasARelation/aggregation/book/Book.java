@@ -1,4 +1,4 @@
-package com.qspider.hasARelation.aggregation;
+package com.qspider.hasARelation.aggregation.book;
 
 public class Book {
     int pages;

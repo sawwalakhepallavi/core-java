@@ -1,4 +1,6 @@
-package com.qspider.hasARelation.aggregation;
+package com.qspider.hasARelation.aggregation.book;
+
+import com.qspider.hasARelation.aggregation.book.Book;
 
 public class Writer {
     int age;
