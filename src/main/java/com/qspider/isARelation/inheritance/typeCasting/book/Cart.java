@@ -29,6 +29,10 @@ public class Cart {
                 case 4:{
                     cart.checkCart();
                 }
+                break;
+                case 5:{
+                    cart.showTotal();
+                }
                 case 6:{
                     exit=false;
                 }
@@ -36,8 +40,32 @@ public class Cart {
         }
     }
 
-    private void checkCart() {
+    private void showTotal() {
+        if(book!=null){
+            if(book instanceof HarryPotter){
+                HarryPotter harryPotter=(HarryPotter) book;
+                int qua= harryPotter.getQuantity();
+                System.out.println("Total amount is : "+harryPotter.getPrice()*qua);
+            } else if (book instanceof RomeoJulet) {
+                RomeoJulet romeoJulet=(RomeoJulet) book;
+                int qua= romeoJulet.getQuantity();
+                System.out.println("Total amount is : "+romeoJulet.getPrice()*qua);
+            }else {
+                TwoStates twoStates=(TwoStates) book;
+                int qua= twoStates.getQuantity();
+                System.out.println("Total amount is : "+twoStates.getPrice()*qua);
+            }
+        }else {
+            System.out.println("get the book first");
+        }
+    }
 
+    private void checkCart() {
+       if(book!=null){
+           System.out.println("Cart is not Empty");
+       }else {
+           System.out.println("cart is empty");
+       }
     }
 
     private void showBook() {
@@ -59,7 +87,7 @@ public class Cart {
                 System.out.println(twoStates.getPages());
             }
         }else {
-            System.out.println(" No Book selected");
+            System.out.println("No Book selected");
         }
     }
 
@@ -73,7 +101,7 @@ public class Cart {
                 int qua = scanner.nextInt();
                 HarryPotter harryPotter = new HarryPotter(qua);
                 book = harryPotter;
-                System.out.println(book.quantity);
+                System.out.println(book.getQuantity());
             }
                 break;
 
@@ -82,7 +110,7 @@ public class Cart {
                 int qua = scanner.nextInt();
                 RomeoJulet romeoJulet = new RomeoJulet(qua);
                 book = romeoJulet;
-                System.out.println(book.quantity);
+                System.out.println(book.getQuantity());
             }
                 break;
 
@@ -91,7 +119,7 @@ public class Cart {
                 int qua = scanner.nextInt();
                 TwoStates twoStates = new TwoStates(qua);
                 book = twoStates;
-                System.out.println(book.quantity);
+                System.out.println(book.getQuantity());
             }
                 break;
         }
