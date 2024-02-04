@@ -1,7 +1,5 @@
 package com.qspider.objectClass.beforeOverriding.hashCode;
 
-import java.util.Objects;
-
 public class Teacher {
     String name;
     int id;
