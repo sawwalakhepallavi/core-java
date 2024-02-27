@@ -3,8 +3,8 @@ package com.qspider.hasARelation.aggregation.bank;
 import java.util.Scanner;
 
 public class Bank {
-    String bankName;
-    String branch;
+//    String bankName;
+//    String branch;
     Account account;
     Scanner scanner=new Scanner(System.in);
     public void createAccount(Account account){
