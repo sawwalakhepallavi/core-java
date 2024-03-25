@@ -11,14 +11,20 @@ public class RetrieveDataFromDeptNo {
             Class.forName("org.postgresql.Driver");
             Connection con= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","root");
             Statement stmt=con.createStatement();
-            ResultSet rs =stmt.executeQuery("select * from j2ee.emplyee where deptno=10");
+            ResultSet rs =stmt.executeQuery("select * from j2ee.emplyee where deptno=20");
+            boolean status=rs.isBeforeFirst();
 
+            if(status){
             while(rs.next()){
                 int id=rs.getInt("empid");
                 String name=rs.getString("ename");
                 int sal=rs.getInt("salary");
                 System.out.println("id :- "+id+" , name:- "+name+" ,salary:- "+sal);
             }
+            }else {
+                System.err.println("Invalid department...");
+            }
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
